@@ -21,7 +21,8 @@ const unknownEndpoint = (request, response) => {
 app.use(cors())
 app.use(express.json())
 app.use(requestLogger)
-//app.use(express.static('build')) // Uncommend to load frontend from production build
+
+app.use(express.static('build')) // Uncommend to load frontend from production build
 
 app.get('/api/notes', (request, response) => {
 	Note.find({}).then(notes => {
