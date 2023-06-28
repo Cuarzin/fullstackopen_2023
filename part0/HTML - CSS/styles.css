@@ -1,0 +1,31 @@
+html{
+    background-color: #00539F;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 16px;
+}
+body{
+    background-color: #FF9500;
+    width: 40%;
+    min-height: 60%;
+    margin: auto;
+    border: 5px solid;
+    padding: 0 1.5em 1.5em 1.5em;
+}
+h1{
+    color: rgb(64, 64, 201);
+    font-size: 60px;
+    text-align: center;
+    text-shadow: 3px 3px 1px black;
+    
+}
+
+img{
+    display: block;
+    margin: 0 auto;
+    border-radius: 20%;
+    transition: box-shadow 0.3s ease;
+}
+
+img:hover{
+    box-shadow: inset 3px 3px 10px gray;
+}
