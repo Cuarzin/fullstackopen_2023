@@ -38,9 +38,14 @@ const App = () => {
         setPersons(persons.concat(response.data))
         setNewNumber('')
         setNewName('')
+        setMessage(`${newObjPerson.name} has been added to phonebook`)
+        setMessageType('create')
       })
-      setMessage(`${newObjPerson.name} has been added to phonebook`)
-      setMessageType('create')
+      .catch(e => {
+        const getError = e.response.data.error
+        setMessage(getError)
+        setMessageType('error')
+      })      
       setTimeout(() => {
         setMessage(null)
       }, 2500)
@@ -62,7 +67,8 @@ const App = () => {
           .then(initialSetup => setPersons(initialSetup))
           setNewName('')
           setNewNumber('')
-        }).catch(error => {
+        })
+        .catch(error => {
           setMessage(`${newPhoneNumber.name} has already been deleted`)
           setMessageType('error')
           setTimeout(() => {

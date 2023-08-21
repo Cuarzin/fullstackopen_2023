@@ -1,4 +1,5 @@
 const mongoose = require('mongoose')
+const uniqueValidator = require('mongoose-unique-validator')
 
 const url = process.env.MONGODB_URI
 
@@ -24,6 +25,8 @@ const noteSchema = new mongoose.Schema({
   },
   important: Boolean,
 })
+
+noteSchema.plugin(uniqueValidator)
 
 noteSchema.set('toJSON', {
   transform: (document, returnedObject) => {
